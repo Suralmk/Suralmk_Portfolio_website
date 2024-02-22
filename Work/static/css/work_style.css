@@ -1,0 +1,63 @@
+.workspage_container {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+.workspage_wrapper {
+    max-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 120px;
+}
+
+.workpage-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(65, 63, 63, 0.425);
+}
+
+/* Work Detail page styles */
+.workdetail_container {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+.workdetail_wrapper {
+    max-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 120px;
+}
+.workdetail-container_picture{
+    width: 100%;
+    height: auto;
+}
+.workdetail-container_picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.workdetail-container_description {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.workdetail-problems, 
+.workdetail-tech,
+.workdetail-presentaion,
+.workdetail-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'src/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/blog_detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/work_style.css' %}" />
+    <title>{% block head_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="navbar_container">
+      <div class="navbar-logo">
+        <h2>Surafel.<span>melaku</span></h2>
+      </div>
+      <div class="navbar-menus">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'work-list' %}">Work</a></li>
+          <li><a href="{% url 'blog-list' %}">Blog</a></li>
+          <li class="contact-me"><a href="{% url 'contact' %}">Contact</a></li>
+          <li>
+            <div class="last-list_menus">
+              <div class="navbar-image_container">
+                <img src="{% static 'src/sun-icon.png' %}" alt="" />
+              </div>
+              <div class="navbar-image_container" id="search-btn">
+                <img src="{% static 'src/search-icon.png' %}" alt="" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="search-form_container">
+        <form action="{% url 'search' %}" role="search">
+          <input type="text" name="search" id="search" placeholder="Search..." />
+        </form>
+      </div>
+    </div>
+    <div class="base_content_container">{% block content %} {% endblock %}</div>
+    <div class="footer_container">
+      <div class="footer_newsletter">
+        <div class="footer_newsletter-form_container">
+          <h1 class="web-title">Subscribe to my newsletter</h1>
+          <form
+            action=""
+            method="POST"
+            id="subscription_form"
+            onsubmit="(event) =>submitEmail(event)"
+          >
+            {% csrf_token %}
+            <div class="input-field">
+              <input type="email" placeholder="Email" id="email" name="sub_email" />
+            </div>
+            <button class="button" type="submit">Subscribe</button>
+          </form>
+          <p class="subscribe_message"></p>
+        </div>
+      </div>
+      <div class="footer_wrapper">
+        <div class="footer-social_links">
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/surafel-melaku-298421235/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BBcxnKAgZT4uaX0d%2FjyNcyg%3D%3D"
+                ><img src="{%  static 'src/linked-icon-1.png' %}" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="{%  static 'src/github-icon.png' %}" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="{%  static 'src/instagram-icon-1.png' %}" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-copyright">
+          <p>Copyright All rights reserved</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+  </body>
+</html>

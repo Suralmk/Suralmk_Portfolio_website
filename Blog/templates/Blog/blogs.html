@@ -1,0 +1,24 @@
+{% extends 'PortfolioApp/base.html' %} {% block head_title %} Blogs, Surafel
+Melaku {% endblock %} {% block content %}
+<div class="blogspage_container">
+  <div class="blogspage_wrapper">
+    <h1 class="web-header">Blogs</h1>
+    <div class="blogspage-container">
+      {% for blog in blogs %}
+      <div class="blogpage-container">
+        <a href="{% url 'blog-detail' blog.get_slug blog.id %}"><h1 class="web-title">{{ blog.blog_title }}</h1></a>
+        <div class="blog-date_key">
+          <p class="web-text">{{ blog.blog_date|date }}</p>
+          <div></div>
+          {% for keyword in blog.blog_key_word.all %}
+          <p class="web-text">{{ keyword.key_word }},</p>
+          {% endfor %}
+        </div>
+        <div class="web-text blogpage-content">{{ blog.blog_content|truncatewords:30|linebreaks }}</div>
+      </div>
+      {% endfor %}
+      {% include "Blog/pagination.html" with page=blogs %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'PortfolioApp/base.html' %} {% load static %} {% block content %}
+<div class="workdetail_container">
+  <div class="workdetail_wrapper">
+    <div class="workdetail-container_picture">
+      <img src="{{ work.work_picture.url }}" alt="eco heaven image" />
+    </div>
+    <div class="workdetail-container_description">
+      <p class="web-header">{{ work.work_title }}</p>
+      <p class="web-date">{{ work.work_year }}</p>
+      <div class="workdetail-tech">
+        <p class="web-title">Technoligies Used</p>
+        <div class="work-techcontainer">
+          {% for work_tech in work.work_technology.all %}
+          <p class="work-tech">{{ work_tech.tech }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="workdetail-presentaion">
+        <h1 class="web-title">Presentaion</h1>
+        <p class="web-text">{{ work.work_presentaion }}</p>
+      </div>
+
+      <div class="workdetail-problems">
+        <h1 class="web-title">Problems Encountred</h1>
+        <p class="web-text">{{ work.work_problems }}</p>
+      </div>
+      <div class="workdetail-links">
+        <div class="live-link">
+          <span>Project Url:</span>
+          <a href="{{ work.work_project_url}}" target="_blank" class="web-link"
+            >{{ work.work_project_url }}</a
+          >
+        </div>
+        <div class="github-link">
+          <span>Github Url:</span>
+          <a
+            href="{{ work.work_github_url }}"
+            target="_blank"
+            class="web-link"
+            >{{ work.work_github_url }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

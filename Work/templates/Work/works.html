@@ -1,0 +1,36 @@
+{% extends 'PortfolioApp/base.html' %} {% load static %} 
+{% block head_title %}  Works, Surafel Melaku  {% endblock %}
+{% block content %}
+
+<div class="workspage-container">
+  <div class="workspage_wrapper">
+    <h1 class="web-header">Works</h1>
+    {% for work in works %}
+    <div class="workpage-container">
+      <div class="work-container_picture">
+        <img src="{{work.work_picture.url }}" alt="{{ work.work_title}} image" />
+      </div>
+      <div class="work-container_description">
+        <p class="work-title">{{ work.work_title}}</p>
+        <p class="web-date">{{ work.work_year }}</p>
+        <div class="work-techcontainer">
+          {% for work_tech in work.work_technology.all  %}
+          <p class="work-tech">{{ work_tech.tech }}</p>
+          {% endfor %}
+        </div>
+        <p class="web-text">
+          {{ work.work_presentaion }}
+        </p>
+        <a href="{% url 'work-detail' work.get_slug work.id  %}"  class="web-link">read more</a>
+      </div>
+    </div>
+    {% endfor %}
+    
+    
+
+
+
+  </div>
+</div>
+
+{% endblock %}

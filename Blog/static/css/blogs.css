@@ -1,0 +1,34 @@
+.blogspage_container {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+.blogspage_wrapper {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 50px 150px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+}
+.blogspage-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.blogpage-container {
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(65, 63, 63, 0.425);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+}
+.blogpage-content {
+    width: 80%;
+}

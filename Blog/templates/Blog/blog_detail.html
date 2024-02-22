@@ -1,0 +1,35 @@
+{% extends 'PortfolioApp/base.html' %} {% load static %} {% block content %}
+<div class="blogdetail_container">
+  <div class="blogdetail_wrapper">
+    <div class="blogdetail-container">
+      <h1 class="web-header">{{ blog.blog_title }}</h1>
+      <div class="blogdetail_picture">
+        <img src="{{ blog.blog_picture.url }}" alt="blog image" />
+      </div>
+      <p class="web-text">
+        {{ blog.blog_content }}
+      </p>
+      {% if blog.blog_sub_content is not None %}
+      {% for sub_content in blog.blog_sub_content.all %}
+     <div class="blogdetail-sub_content">
+      <p class="web-title">
+        {{ sub_content.blog_sub_title }}
+      </p>
+      <p class="web-text">
+        {{ sub_content.blog_sub_content }}
+      </p>
+     </div>
+      {% endfor %}
+      {% endif %}
+      <hr>
+      <p class="web-text">{{ blog.blog_date|date }}</p>
+    </div>
+    <div class="recent-blogs">
+      <h1 class="web-title">Recent Blogs</h1>
+      <div class="recent-blog">
+        <p class="web-text">Django crash course</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
