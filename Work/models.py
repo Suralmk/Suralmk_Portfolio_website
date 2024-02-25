@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 # Create your models here.
 
 def work_directory_path(instance, filename):
@@ -21,6 +22,9 @@ class Work(models.Model):
     
     def get_slug(self):
         return slugify(self.work_title, allow_unicode=True)
+    
+    def get_absolute_url(self):
+        return reverse("work-detail", kwargs = {"work_name": self.get_slug, "work_id" : self.id})
 
 class WorkTechnology(models.Model):
     work = models.ForeignKey(Work, on_delete=models.CASCADE, related_name="work_technology")

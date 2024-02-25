@@ -7,7 +7,7 @@
       <div class="blogpage-container">
         <a href="{% url 'blog-detail' blog.get_slug blog.id %}"><h1 class="web-title">{{ blog.blog_title }}</h1></a>
         <div class="blog-date_key">
-          <p class="web-text">{{ blog.blog_date }}</p>
+          <p class="web-text">{{ blog.blog_date|date }}</p>
           <div></div>
           {% for keyword in blog.blog_key_word.all %}
           <p class="web-text">{{ keyword.key_word }},</p>

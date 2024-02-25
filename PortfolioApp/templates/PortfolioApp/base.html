@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
     <link rel="stylesheet" href="{% static 'css/blog_detail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/work_style.css' %}" />
+    <script
+      src="http://code.jquery.com/jquery-latest.min.js"
+      type="text/javascript"
+    ></script>
     <title>{% block head_title %}{% endblock %}</title>
   </head>
   <body>
@@ -26,9 +30,6 @@
           <li class="contact-me"><a href="{% url 'contact' %}">Contact</a></li>
           <li>
             <div class="last-list_menus">
-              <div class="navbar-image_container">
-                <img src="{% static 'src/sun-icon.png' %}" alt="" />
-              </div>
               <div class="navbar-image_container" id="search-btn">
                 <img src="{% static 'src/search-icon.png' %}" alt="" />
               </div>
@@ -36,26 +37,31 @@
           </li>
         </ul>
       </div>
-      <div class="search-form_container">
+      <dialog>
         <form action="{% url 'search' %}" role="search">
-          <input type="text" name="search" id="search" placeholder="Search..." />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search blog..."
+          />
         </form>
-      </div>
+      </dialog>
     </div>
     <div class="base_content_container">{% block content %} {% endblock %}</div>
     <div class="footer_container">
       <div class="footer_newsletter">
         <div class="footer_newsletter-form_container">
           <h1 class="web-title">Subscribe to my newsletter</h1>
-          <form
-            action=""
-            method="POST"
-            id="subscription_form"
-            onsubmit="(event) =>submitEmail(event)"
-          >
+          <form id="subscription_form" action="subscribe/">
             {% csrf_token %}
             <div class="input-field">
-              <input type="email" placeholder="Email" id="email" name="sub_email" />
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="sub_email"
+              />
             </div>
             <button class="button" type="submit">Subscribe</button>
           </form>
@@ -92,5 +98,21 @@
 
     <script src="{% static 'js/base.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script> -->
+
+    <script>
+      $(document).on("submit", "subscription_form", function (e) {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "http://127.0.0.1:2500/subscribe/",
+          data: {
+            email: $("#email").val(),
+            age: 12,
+            csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]"),
+          },
+        });
+      });
+    </script>
   </body>
 </html>

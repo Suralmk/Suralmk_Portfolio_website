@@ -1,13 +1,28 @@
+
+{% load static %}
 <div class="pagination">
     <span class="step-links">
     {% if page.has_previous %}
-    <a href="?page={{ page.previous_page_number }}">Previous</a>
+    <a href="?page={{ page.previous_page_number }}"><img src="{% static 'src/left-arrow.png' %}" alt=""></a>
+    {% else  %}
+    <p><img src="{% static 'src/left-arrow.png' %}" alt=""></p>
     {% endif %}
+    
     <span class="current">
-    Page {{ page.number }} of {{ page.paginator.num_pages }}.
+    <!-- Page {{ page.number }} of {{ page.paginator.num_pages }}. -->
+
+    {% for number in page.paginator %}
+    {% if forloop.counter == page.number %}
+    <a class="current-page" href="?page={{ forloop.counter }}"> {{ forloop.counter }}</a>
+    {% else %}
+    <a  href="?page={{ forloop.counter }}"> {{ forloop.counter }}</a>
+    {% endif %}
+    {% endfor %}
     </span>
     {% if page.has_next %}
-    <a href="?page={{ page.next_page_number }}">Next</a>
+    <a href="?page={{ page.next_page_number }}"><img src="{% static 'src/right-arrow.png' %}" alt=""></a>
+    {% else  %}
+    <p><img src="{% static 'src/right-arrow.png' %}" alt=""></p>
     {% endif %}
     </span>
    </div>
@@ -20,16 +35,43 @@
     }
     .step-links {
         display: flex;
+        align-items: center;
         gap: 10px;
     }
-    .step-links a {
+    .step-links a{
         font-size: 16px;
-        color: rgb(107, 107, 248);
+        background: rgb(156, 156, 158, 0.8);
         font-weight: bolder;
-
-
+        padding: 3px;
+        display: flex;
+        align-items: center;
+    }
+    .step-links p {
+        font-size: 16px;
+        background: rgb(156, 156, 158, 0.3);
+        font-weight: bolder;
+        padding: 3px;
+        display: flex;
+        align-items: center;
     }
     .current {
         font-weight: bold;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .current a {
+        background: #ffffff;
+        font-weight: bolder;
+        padding: 3px 10px;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+    }
+    .current a.current-page {
+        background: #4040ffb3;
+        font-weight: bolder;
+        padding: 3px 10px;
+        font-size: 19px;
+        color: white;
     }
    </style>

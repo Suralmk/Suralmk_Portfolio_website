@@ -25,12 +25,15 @@
         <p class="web-text">{{ work.work_problems }}</p>
       </div>
       <div class="workdetail-links">
+        {% if work.work_project_url %}
         <div class="live-link">
           <span>Project Url:</span>
           <a href="{{ work.work_project_url}}" target="_blank" class="web-link"
             >{{ work.work_project_url }}</a
           >
         </div>
+        {% endif %}
+        {% if work.work_github_url %}
         <div class="github-link">
           <span>Github Url:</span>
           <a
@@ -40,6 +43,7 @@
             >{{ work.work_github_url }}</a
           >
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

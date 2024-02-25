@@ -32,7 +32,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
       <p class="web-title">About Me</p>
       <div class="aboutme-container">
         <div class="aboutme-container_picture">
-          <img src="{% static 'src/agent-2.jpg' %}" alt="about me image" />
+          <img src="{% static 'src/me-3.jpg' %}" alt="about me image" />
         </div>
 
         <div class="aboutme-container_description">
@@ -137,7 +137,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
                 <img src="{% static 'src/skills/Rest-2.png' %}" alt="">
               </div>
               <div class="skill-bar">
-                <h4>REST API</h4>
+                <h4>Django REST Framework</h4>
                 <span class="bar"><span class="rest"></span></span>
               </div>
             </li>
@@ -222,7 +222,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
               {% endfor %}
               <p class="web-text">Django</p>
             </div>
-            <p class="web-text">{{ blog.blog_content}}</p>
+            <p class="web-text text-limit">{{ blog.blog_content}}</p>
             <a
               href="{% url 'blog-detail' blog.get_slug blog.id %}"
               class="web-link"
@@ -249,3 +249,4 @@ Home, Surafel Melaku {% endblock %} {% block content %}
   </div>
 </div>
 {% endblock %}
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis explicabo veniam provident non laudantium velit exercitationem nemo et ipsa error incidunt temporibus earum odio fuga, recusandae quia eligendi suscipit quo.

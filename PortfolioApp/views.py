@@ -5,11 +5,12 @@ from django.db.models import Q
 from . forms import SubscriptionForm
 from . models import Subscription
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+
 def home(request):
     blogs = Blog.objects.all().order_by("-blog_date")
     works = Work.objects.all()
-    if request.method == "POST":
-        print("email")
     context = {
         "blogs":blogs,
         "works":works
@@ -32,5 +33,10 @@ def search(request):
     blogs = Blog.objects.filter(Q(blog_title__icontains=query))
     return render(request, 'PortfolioApp/search.html', locals())
 
+@require_POST
 def subscribe(request):
-    return redirect("")
+        email = request.POST.get("email")
+        print(request.POST)
+        if Subscription.objects.filter(email=email).exists(): 
+            return JsonResponse({"error" : "You have already subscribed!"})
+        return JsonResponse({"success" : "Sucesfully subscribed, Thank you!"})

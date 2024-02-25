@@ -11,5 +11,4 @@ def blog_list(request):
 
 def blog_detail(request, blog_name, blog_id):
     blog = Blog.objects.filter(id=blog_id).first()
-
     return render(request, "Blog/blog_detail.html", {"blog" : blog})
