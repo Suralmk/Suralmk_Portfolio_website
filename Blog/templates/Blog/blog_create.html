@@ -1,0 +1,50 @@
+{% extends 'PortfolioApp/base.html' %} {% block head_title %} Blogs, Surafel
+Melaku {% endblock %} {% block content %}
+<div class="blogcreate_container">
+    <div class="blogcreate_wrapper">
+       
+        <div class="blog-create_container">
+             <h1 class="web-header">
+                Make A Blog
+        </h1>
+            <form method="POST"       enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="input-field">
+                    <label for="blog_title">Blog Title</label>
+                    <input
+                      type="text"
+                      placeholder="Blog Title"
+                      name="blog_title"
+                      id="blog_title"
+                      required
+                    />
+                  </div>
+                
+                <div class="input-field">
+                    <label for="blog_content">Message</label>
+                    <textarea
+                      name="blog_content"
+                      id="blog_content"
+                      cols="30"
+                      rows="10"
+                      required
+                      placeholder="Content"
+                    ></textarea>
+                  </div>
+                  <div class="input-field">
+                    <label for="blog_picture">Blog Picture</label>
+                    <input
+                      type="file"
+                      name="blog_picture"
+                      id="blog_picture"
+                      class="upload_image"
+                      required
+                    />
+                  </div>
+                  <button class="button" id="blog-post-btn">Post</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

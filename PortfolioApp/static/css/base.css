@@ -54,6 +54,8 @@ textarea:focus, input:focus {
     --btn-bg:rgb(32, 14, 201);
     --bg-2:rgba(128, 128, 128, 0.127);
     --link-color:rgb(107, 107, 248);
+
+    --primary-gradient: linear-gradient(blue red);
 }
 /* .dark-theme {
     --primary-color:rgb(27, 25, 25);
@@ -64,7 +66,7 @@ textarea:focus, input:focus {
     font-size: 18px;
     color: var(--text-color);
     text-align: justify;
-    line-height: 28px;   
+    line-height: 28px;  
 }
 .text-limit {
     height: 110px;
@@ -152,7 +154,9 @@ textarea:focus, input:focus {
     color: var(--link-color);
     font-size: 14px;
 }
-
+.nav-menu-btn {
+    display: none;
+}
 .navbar-menus ul {
     width: 100%;
     display: flex;
@@ -181,6 +185,9 @@ dialog {
     width: 30%;
     margin: 100px auto;
 }
+dialog::backdrop {
+    backdrop-filter: blur(3px);
+}
 dialog form {
     border: none;
     display: flex;
@@ -203,6 +210,30 @@ dialog input {
         opacity: 1;
     }
 }
+
+@media screen and (max-width:650px) {
+    .navbar-menus  ul{
+        display: none;
+    }
+    .nav-menu-btn {
+        display: block;
+    }
+    .active   ul{
+        display: flex;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        background: rgba(231, 231, 231, 0.716);
+        backdrop-filter: blur(5px);
+        gap: 15px;
+        padding: 30px 0;
+        box-shadow: rgba(80, 78, 78, 0.425) 10px 0 3px;
+    }
+
+
+
+}
 /* Content styles */
 .base_content_container {
     height: auto;
@@ -210,7 +241,7 @@ dialog input {
 
 /* Footer styles */
 .footer_container {
-    height: 200px;
+    height: auto;
     background: var(--primary-color);
     width: 100%;
 }
@@ -218,7 +249,8 @@ dialog input {
     width: 100%;
     height: auto;
     padding: 50px;
-    background: var(--bg-2);
+    background: linear-gradient(  to bottom right, rgba(0, 3, 199, 0.175) ,rgba(229, 228, 231, 0.132));
+
 }
 .footer_newsletter-form_container {
     width: 500px;
@@ -256,6 +288,8 @@ dialog input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    
 }
 .footer-social_links, .footer-copyright {
     width: 15%;
@@ -293,4 +327,21 @@ dialog input {
 }
 .contact-me a:hover {
     color: var(--primary-color);
+}
+
+@media screen and (max-width:1200px) {
+    .home-map_wrapper {
+        padding: 50px 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .home-map_wrapper {
+        padding: 50px 70px;
+    }
+}
+@media screen and (max-width:800px) {
+    .footer_newsletter-form_container {
+        width: 100%;
+    }
 }

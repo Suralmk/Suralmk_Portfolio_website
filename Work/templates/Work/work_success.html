@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../static/css/work_style.css" />
+  </head>
+  <body>
+    <div class="workemail_container">
+      <div class="workemail_wrapper">
+        <h1 class="email-header">
+          {{ work.work_title }}
+        </h1>
+        <div class="email_img-container">
+          <img src="{{work_url }}" alt="" />
+        </div>
+       <div>
+        <p class="email-title">Description</p>
+        <p class="email-content">
+          {{ work.work_description }} <a href="">see more</a>
+        </p>
+       </div>
+       <div>
+        <p class="email-title">Challenges</p>
+        <p class="email-content">
+          {{ work.work_problems }} <a href="">see more</a>
+        </p>
+       </div>
+       <p class="email-content">{{ work.work_date}}</p>
+       <hr />
+       <div>
+        <p class="email-title" style="margin-bottom: 20px;">Recent Projects</p>
+          <div class="recent-project-container">
+            <a href="">
+              <div class="recent-project">
+                <img src="../../../PortfolioApp/static/src/me.jpg" alt="" />
+                <p class="email-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi non, aperiam ducimus </p>
+              </div>
+            </a>
+            <a href="">
+              <div class="recent-project">
+                <img src="../../../PortfolioApp/static/src/me.jpg" alt="" />
+                <p class="email-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi non, aperiam ducimus </p>
+              </div>
+            </a>
+          </div>
+       </div>
+       <hr>
+        <p class="email-content">Check out my <a href="">website</a> to see other projects I have worked on  using
+          <ul style="width: 100%; display: flex; flex-direction: column; gap:10px; margin-left: 30px;">
+            <li><a href="">Python</a></li>
+            <li><a href="">Django</a></li>
+            <li><a href="">Django REST Framework</a></li>
+            <li><a href="">Django Channels</a></li>
+            <li><a href="">React.js</a></li>
+            <li><a href="">React Native</a></li>
+            <li><a href="">Node.js</a></li>
+          </ul>
+          <hr>
+          from Surafel Melaku <br>
+          Best Regards
+    </div>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    a {
+        text-decoration: none;
+        color: rgba(6, 6, 180, 0.795);
+        font-size: 19px;
+      line-height: 30px;
+      font-weight: bolder;
+    }
+    .workemail_container {
+      width: 100%;
+      height: auto;
+      background: white;
+    }
+    .workemail_wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(44, 56, 58, 0.342);
+      padding: 50px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .email_img-container {
+      width: 100%;
+      height: 100%;
+    }
+    .email_img-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    .email-header {
+      font-size: 40px;
+      line-height: 50px;
+      font-weight: bolder;
+      color: black;
+      text-transform: capitalize;
+    }
+    .email-content {
+      font-size: 19px;
+      line-height: 30px;
+    }
+    .email-title {
+      font-size: 30px;
+      line-height: 35px;
+      font-weight: bolder;
+      color: rgb(19, 19, 19);
+      text-transform: capitalize;
+    }
+    .recent-project-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .recent-project-container a {
+      width: 45%;
+    }
+    .recent-project {
+      width: 100%;
+      height:100%;
+      background: rgba(255, 255, 255, 0.575);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .recent-project p {
+      padding:15px;
+      font-weight: bolder;
+      text-transform: capitalize;
+    }
+    .recent-project img{
+      width: 100%;
+      height:200px;
+      object-fit: cover;
+    }
+  </style>
+  </body>
+ 
+    
+</html>

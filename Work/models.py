@@ -11,6 +11,7 @@ class Work(models.Model):
     work_title = models.CharField(max_length=200)
     work_picture = models.ImageField(upload_to=work_directory_path)
     work_year = models.IntegerField()
+    work_description = models.TextField(max_length=2000, null=True, blank=True)
     work_presentaion = models.TextField(max_length=2000)
     work_problems =models.TextField(max_length=2000)
     work_project_url=models.URLField(blank=True, null=True)

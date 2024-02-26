@@ -1,0 +1,104 @@
+{% extends 'PortfolioApp/base.html' %} {% block head_title %} Add work {% endblock %} {% block content %}
+<div class="blogcreate_container">
+    <div class="blogcreate_wrapper">
+       
+        <div class="blog-create_container">
+             <h1 class="web-header">
+                Add work
+        </h1>
+            <form method="POST" enctype="multipart/form-data">
+
+              {% csrf_token %}
+                <div class="input-field">
+                    <label for="work_title">Work title</label>
+                    <input
+                      type="text"
+                      placeholder="Work Title"
+                      name="work_title"
+                      id="work_title"
+                      required
+                    />
+                  </div>
+                <div class="input-field">
+                    <label for="work_year">Year</label>
+                    <input
+                      type="number"
+                      placeholder="Work year"
+                      name="work_year"
+                      id="work_year"
+                      required
+                    />
+                  </div>
+                
+                <div class="input-field">
+                    <label for="work_desc">Description</label>
+                    <textarea
+                      name="work_desc"
+                      id="work_desc"
+                      cols="30"
+                      rows="10"
+                      required
+                      placeholder="Description"
+                    ></textarea>
+                  </div>
+                <div class="input-field">
+                    <label for="work_presentation">Presentaion</label>
+                    <textarea
+                      name="work_presentation"
+                      id="work_presentation"
+                      cols="30"
+                      rows="10"
+                      required
+                      placeholder="Presentation"
+                    ></textarea>
+                  </div>
+                <div class="input-field">
+                    <label for="work_challenges">Challenges</label>
+                    <textarea
+                      name="work_challenges"
+                      id="work_challenges"
+                      cols="30"
+                      rows="10"
+                      required
+                      placeholder="Challenges"
+                    ></textarea>
+                  </div>
+                  
+
+                  <div class="input-field">
+                    <label for="project_url">Project URL</label>
+                    <input
+                      type="url"
+                      name="project_url"
+                      id="project_url"
+                      placeholder="Project url"
+                      required
+                    />
+                  </div>
+                  <div class="input-field">
+                    <label for="github_url">Github Url</label>
+                    <input
+                      type="url"
+                      name="github_url"
+                      id="github_url"
+                      placeholder="Github url"
+                      required
+                    />
+                  </div>
+                  <div class="input-field">
+                    <label for="work_picture">Work Picture</label>
+                    <input
+                      type="file"
+                      name="work_picture"
+                      id="work_picture"
+                      class="upload_image"
+                      required
+                    />
+                  </div>
+                  <button class="button" id="blog-post-btn">Add Work</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

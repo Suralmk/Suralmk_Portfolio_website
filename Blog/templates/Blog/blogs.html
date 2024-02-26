@@ -2,7 +2,12 @@
 Melaku {% endblock %} {% block content %}
 <div class="blogspage_container">
   <div class="blogspage_wrapper">
-    <h1 class="web-header">Blogs</h1>
+    <div style="width: 100%; display: flex; gap: 50px; align-items: center;">
+      <h1 class="web-header">Blogs </h1>
+      {% if request.user.is_superuser %}
+      <a class="button" href="{% url 'blog-create' %}"> Post Blog</a>
+      {% endif %}
+    </div>
     <div class="blogspage-container">
       {% for blog in blogs %}
       <div class="blogpage-container">

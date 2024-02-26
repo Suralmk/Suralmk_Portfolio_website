@@ -4,7 +4,12 @@
 
 <div class="workspage-container">
   <div class="workspage_wrapper">
-    <h1 class="web-header">Works</h1>
+    <div style="width: 100%; display: flex; align-items: center; gap: 50px;">
+      <h1 class="web-header">Works</h1>
+    {% if request.user.is_superuser %}
+      <a class="button" href="{% url 'work-create' %}">Add Work</a>
+      {% endif %}
+    </div>
     {% for work in works %}
     <div class="workpage-container">
       <div class="work-container_picture">

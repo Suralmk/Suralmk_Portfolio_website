@@ -37,6 +37,13 @@
           </li>
         </ul>
       </div>
+      <div class="navbar-image_container nav-menu-btn">
+        <img src="{% static 'src/me.jpg' %}" alt="" />
+      </div>
+      
+
+
+
       <dialog>
         <form action="{% url 'search' %}" role="search">
           <input
@@ -47,13 +54,15 @@
           />
         </form>
       </dialog>
+
+
     </div>
     <div class="base_content_container">{% block content %} {% endblock %}</div>
     <div class="footer_container">
       <div class="footer_newsletter">
         <div class="footer_newsletter-form_container">
           <h1 class="web-title">Subscribe to my newsletter</h1>
-          <form id="subscription_form" action="subscribe/">
+          <form id="subscription_form">
             {% csrf_token %}
             <div class="input-field">
               <input
@@ -101,18 +110,44 @@
     <!-- <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script> -->
 
     <script>
-      $(document).on("submit", "subscription_form", function (e) {
+      const subForm = document.getElementById('subscription_formm')
+      $(document).on("submit", "#subscription_form", function (e) {
         e.preventDefault();
-        $.ajax({
-          type: "POST",
-          url: "http://127.0.0.1:2500/subscribe/",
-          data: {
-            email: $("#email").val(),
-            age: 12,
-            csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]"),
-          },
-        });
+
+        if (validateSubscription() === true) {
+          $.ajax({
+            type: "POST",
+            url: "/subscribe",
+            data: {
+              email: $("#email").val(),
+              csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]"),
+            },
+            success: function () {
+              $(".subscribe_message").html(data);
+            },
+          });
+        } else {
+          return;
+        }
       });
+
+      const validateSubscription = () => {
+        var input,
+          i,
+          valid = true;
+        console.log(subForm.getElementsByTagName("input"));
+        input = subForm.getElementsByTagName("input");
+
+        for (i = 0; i < input.length; i++) {
+          if (input[i].value == "") {
+            document.querySelector(".subscribe_message").style.display = "flex";
+            document.querySelector(".subscribe_message").innerHTML =
+              "Email is required!";
+            valid = false;
+          }
+        }
+        return valid;
+      };
     </script>
   </body>
 </html>

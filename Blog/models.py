@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 # Create your models here.
 
 def blog_directory_path(instance, filename):
-    print(instance.id)
-    return 'blog/blog_{0}/{1}'.format(instance.id, filename)
+    return 'blog/{0}'.format( filename)
 
 class Blog(models.Model):
     blog_title = models.CharField(max_length=200)
@@ -17,6 +17,9 @@ class Blog(models.Model):
     
     def get_slug(self):
         return slugify(self.blog_title, allow_unicode=True)
+    
+    def get_absolute_url(self):
+        return reverse("blog-detail", kwargs={self.get_slug, self.id})
 
 class KeyWord(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name="blog_key_word")

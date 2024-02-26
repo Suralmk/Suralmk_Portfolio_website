@@ -14,7 +14,7 @@
     </div>
     <h1 class="web-title">Contact me Uisng this form</h1>
     <div class="contact-form_container">
-      <form action="" method="POST">
+      <form  method="POST" id="contactme-form">
         {% csrf_token %}
         <div class="input-field-flex">
           <div class="input-field">
@@ -24,6 +24,7 @@
               placeholder="Full Name"
               name="full_name"
               id="full_name"
+              class="input"
               required
             />
           </div>
@@ -34,6 +35,7 @@
               placeholder="Email"
               name="contact_email"
               id="contact_email"
+              class="input"
               required
             />
           </div>
@@ -47,6 +49,7 @@
             rows="10"
             required
             placeholder="Message"
+            class="input"
           ></textarea>
         </div>
 
