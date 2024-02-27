@@ -1,7 +1,7 @@
 {% extends 'PortfolioApp/base.html' %} {% block head_title %} Blogs, Surafel
 Melaku {% endblock %} {% block content %}
 <div class="blogspage_container">
-  <div class="blogspage_wrapper">
+  <div class="blogspage_wrapper" style="padding: 20px;" >
     <div style="width: 100%; display: flex; gap: 50px; align-items: center;">
       <h1 class="web-header">Blogs </h1>
       {% if request.user.is_superuser %}

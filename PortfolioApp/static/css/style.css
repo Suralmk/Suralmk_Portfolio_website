@@ -67,6 +67,14 @@
         width: 70%;
     }
 }
+@media screen and (max-width:600px) {
+    .home-hero_wrapper{
+        padding: 50px 20px;
+    }
+    .home-hero_picture {
+        width: 100%;
+    }
+}
 /* About me section */
 .home-aboutme_container {
     width: 100%;
@@ -138,6 +146,14 @@
     }
     .aboutme-container_picture {
         width: 70%;
+    }
+}
+@media screen and (max-width:600px) {
+    .home-aboutme_wrapper {
+        padding: 50px 20px;
+    }
+    .aboutme-container_picture {
+        width: 100%;
     }
 }
 /* Skills Section */
@@ -285,7 +301,14 @@ width: 75%;
         width: 100%;
     }
 }
-
+@media screen and (max-width:600px) {
+    .home-skills_wrapper {
+        padding: 50px 20px;
+    }
+    .skills-container_set {
+        padding: 0;
+    }
+}
 /* Works Section */
 .home-works_container {
     width: 100%;
@@ -374,6 +397,11 @@ width: 75%;
         height: 270px;
     }
 }
+@media screen and (max-width:600px) {
+    .home-works_wrapper {
+        padding: 50px 20px;
+    }
+}
 /* Blog Section style */
 
 
@@ -441,6 +469,11 @@ width: 75%;
         width: 100%;
     }
 }
+@media screen and (max-width:600px) {
+    .home-blog_wrapper {
+        padding: 50px 20px;
+    }
+}
 /* Home Map styles */
 .home-map_container {
     width: 100%;
@@ -470,6 +503,12 @@ width: 75%;
 @media screen and (max-width:800px) {
     .home-map_wrapper {
         padding: 50px 40px;
+    }
+}
+@media screen and (max-width:600px) {
+
+    .home-map_wrapper{
+        padding: 50px 20px;
     }
 }
 /*  Contact Pgae */
@@ -574,3 +613,24 @@ width: 75%;
 }
 
 
+@media screen and (max-width:1200px) {
+    .blogspage_wrapper {
+        padding: 50px 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .contact-form_container {
+        width: 80%;
+    }
+}
+@media screen and (max-width:800px) {
+    .contact-form_container {
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .contact_wrapper {
+        padding: 50px 20px;
+    }
+}

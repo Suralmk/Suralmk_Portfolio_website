@@ -6,7 +6,7 @@
 .blogspage_wrapper {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 50px 150px;
+    padding: 50px 0px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -28,10 +28,12 @@
     flex-direction: column;
     gap: 20px;
     align-items: start;
+    width: 100%;
 }
 .blogpage-content {
     width: 80%;
 }
+
 
 
 /* Blog Create Page */
@@ -65,13 +67,4 @@
 }
 #blog-post-btn {
     margin-top: 30px;
-}
-.upload_image {
-    padding: 0;
-}
-.upload_image::-webkit-file-upload-button {
-    padding: 10px;
-    border: none;
-    background: rgba(69, 69, 155, 0.281);
-    cursor: pointer;
 }

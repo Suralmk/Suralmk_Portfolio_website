@@ -37,12 +37,23 @@
     align-items: start;
     gap: 10px;
 }
-.recent-blogs {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-shadow: rgba(80, 78, 78, 0.425) 0 0 2px;
-    padding: 20px;
-    align-self: flex-start;
+@media screen and (max-width:1200px) {
+    .blogspage_wrapper {
+        padding: 50px 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .blogdetail-container {
+        width: 100%;
+    }
+}
+@media screen and (max-width:800px) {
+    .blogdetail_wrapper {
+        padding: 50px 20px;
+    }
+    .blogdetail-container h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
 }
