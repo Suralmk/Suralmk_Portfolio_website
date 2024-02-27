@@ -55,7 +55,7 @@ def work_create(request):
                 subject=subject,
                 body=plain_message,
                 from_email=settings.EMAIL_HOST_USER,
-                to=["surafelmelaku940@gmail.com"]
+                to=recivers
             )
             email.attach_alternative(template, "text/html")
             email.send()

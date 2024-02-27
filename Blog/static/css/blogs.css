@@ -6,7 +6,7 @@
 .blogspage_wrapper {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 50px 40px;
+    padding: 50px 150px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@
 .blogcreate_wrapper {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 50px 150px;
+    padding: 50px 40px;
     height: auto;
     display: flex;
     align-items: start;

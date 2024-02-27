@@ -10,7 +10,7 @@ from django.views.decorators.http import require_POST
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-
+import json
 def home(request):
     blogs = Blog.objects.all().order_by("-blog_date")
     works = Work.objects.all()
@@ -53,10 +53,17 @@ def search(request):
 
 @require_POST
 def subscribe(request):
-        email = request.POST.get("email")
-        print(request.POST)
-        if Subscription.objects.filter(email=email).exists(): 
-            return JsonResponse({"error" : "You have already subscribed!"})
-        return JsonResponse({"success" : "Sucesfully subscribed, Thank you!"})
+        is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+        if is_ajax:
+            if request.method == 'POST':
+                data = json.load(request)
+                email = data.get('email')
+                if Subscription.objects.filter(email=email).exists():
+                    return JsonResponse({"error" : "You have already subscribed "})
+                Subscription.objects.create(email=email)
+                return JsonResponse({'success': 'Succesfully Subscribed, Thank you!'})
+            return JsonResponse({'status': 'Invalid request'}, status=400)
+        else:
+            return JsonResponse({"statuc" : 'Invalid request'})
 
 

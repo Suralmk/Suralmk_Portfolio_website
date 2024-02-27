@@ -156,6 +156,12 @@ textarea:focus, input:focus {
 }
 .nav-menu-btn {
     display: none;
+    height: 40px;
+    width: 40px;
+}
+.nav-menu-btn img {
+    width: 100%;
+    height: 100%;
 }
 .navbar-menus ul {
     width: 100%;
@@ -279,6 +285,20 @@ dialog input {
     width: 100%;
     text-align: start;
     display: none;
+}
+.subscribe_message_success {
+    background: rgb(3, 143, 15, 0.1);
+    border:1px solid rgb(3, 143, 15);
+    padding: 10px;
+    width: 100%;
+    text-align: start;
+    display: none;
+}
+.show_sub_message {
+    display: block;
+}
+.show_sub_message_success {
+    display: block;
 }
 .footer_wrapper {
     padding: 20px 30px;

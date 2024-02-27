@@ -38,11 +38,8 @@
         </ul>
       </div>
       <div class="navbar-image_container nav-menu-btn">
-        <img src="{% static 'src/me.jpg' %}" alt="" />
+        <img src="{% static 'src/menu-img.png' %}" alt="" />
       </div>
-      
-
-
 
       <dialog>
         <form action="{% url 'search' %}" role="search">
@@ -54,8 +51,6 @@
           />
         </form>
       </dialog>
-
-
     </div>
     <div class="base_content_container">{% block content %} {% endblock %}</div>
     <div class="footer_container">
@@ -70,11 +65,13 @@
                 placeholder="Email"
                 id="email"
                 name="sub_email"
+                class="contact_input"
               />
             </div>
             <button class="button" type="submit">Subscribe</button>
           </form>
           <p class="subscribe_message"></p>
+          <p class="subscribe_message_success"></p>
         </div>
       </div>
       <div class="footer_wrapper">
@@ -109,21 +106,50 @@
     <script src="{% static 'js/contact.js' %}"></script>
     <!-- <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script> -->
 
-    <script>
-      const subForm = document.getElementById('subscription_formm')
+    <script type="text/javascript">
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
       $(document).on("submit", "#subscription_form", function (e) {
         e.preventDefault();
-
+        var options;
         if (validateSubscription() === true) {
           $.ajax({
             type: "POST",
-            url: "/subscribe",
-            data: {
+            url: "subscribe/",
+            dataType: "json",
+            data: JSON.stringify({
               email: $("#email").val(),
-              csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]"),
+            }),
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+              "X-CSRFToken": getCookie("csrftoken"),
             },
-            success: function () {
-              $(".subscribe_message").html(data);
+            success: (data) => {
+              if (data.error) {
+                $(".subscribe_message").addClass("show_sub_message");
+                $(".subscribe_message").text(data.error);
+              } else {
+                $(".subscribe_message_success").addClass(
+                  "show_sub_message_success"
+                );
+                $(".subscribe_message_success").text(data.success);
+              }
             },
           });
         } else {
@@ -132,20 +158,14 @@
       });
 
       const validateSubscription = () => {
-        var input,
-          i,
-          valid = true;
-        console.log(subForm.getElementsByTagName("input"));
-        input = subForm.getElementsByTagName("input");
+        var valid = true;
 
-        for (i = 0; i < input.length; i++) {
-          if (input[i].value == "") {
-            document.querySelector(".subscribe_message").style.display = "flex";
-            document.querySelector(".subscribe_message").innerHTML =
-              "Email is required!";
-            valid = false;
-          }
+        if ($(".contact_input").val() === "") {
+          $(".subscribe_message").addClass("show_sub_message");
+          $(".subscribe_message").text("Email is required!");
+          valid = false;
         }
+
         return valid;
       };
     </script>
