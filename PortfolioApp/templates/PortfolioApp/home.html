@@ -5,31 +5,34 @@ Home, Surafel Melaku {% endblock %} {% block content %}
   <div class="home-hero_container">
     <div class="home-hero_wrapper">
       <div class="home-hero_description">
-        <h1 class="web-header">
-          Hi, I am Surafel Melaku <br />
-          <span>Full stack Web Developer</span>
-        </h1>
-        <p class="web-text">
+        <h1 class="web-header">Hi, I am Surafel Melaku <br /></h1>
+        <p class="animate-charcter">Full stack Web Developer</p>
+        <p class="web-text" style="text-align: center">
           I build secure, fast and reliable web applcations using
           <span>Python</span> and <span>Javascript</span>.
         </p>
-        <p class="web-text">
-          Webs are the best way to make a business go big and solve huge problems. So,
-          if you are facing a problem or in need of making your business go big
-          than it is now, please do not hesitate to contact me.
+        <p class="web-text" style="text-align: center">
+          Webs are the best way to make a business go big and solve huge
+          problems. So, if you are facing a problem or in need of making your
+          business go big than it is now, please do not hesitate to contact me.
         </p>
 
-        <a href="{% static 'src/files/Surafel-Melaku-cv.pdf' %}" download class="button">Download Resume</a>
+        <a
+          href="{% static 'src/files/Surafel-Melaku-cv.pdf' %}"
+          download
+          class="button download-resume"
+          >Download Resume <i class="ri-download-line"></i></a
+        >
       </div>
 
-      <div class="home-hero_picture">
+      <!-- <div class="home-hero_picture">
         <img src="{% static 'src/me.jpg' %}" alt="" />
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="home-aboutme_container" id="about">
     <div class="home-aboutme_wrapper">
-      <p class="web-title">About Me</p>
+      <p class="web-home-title">About Me</p>
       <div class="aboutme-container">
         <div class="aboutme-container_picture">
           <img src="{% static 'src/me-3.jpg' %}" alt="about me image" />
@@ -37,9 +40,9 @@ Home, Surafel Melaku {% endblock %} {% block content %}
 
         <div class="aboutme-container_description">
           <p class="web-text">
-            I am a fourth year Software Enginiering Student at Wollo University
-            who is passionate about building web applcation and at all
-            the tech world.
+            I am a fourth year Software Engineering Student at Wollo University
+            who is passionate about building web applcation and at all the tech
+            world.
             <br /><br />
             I am currently skilled in python and Javascript incluing frameworks
             Django, Django REST Framework for building Rest Api, Django channels
@@ -56,8 +59,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
 
   <div class="home-skills_container">
     <div class="home-skills_wrapper">
-
-      <h1 class="web-title">Skills</h1>
+      <h1 class="web-home-title">Skills</h1>
 
       <div class="skills-container">
         <div class="skills-container_set">
@@ -65,7 +67,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
           <ul>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/html.png' %}" alt="">
+                <img src="{% static 'src/skills/html.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Html</h4>
@@ -74,7 +76,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/css.png' %}" alt="">
+                <img src="{% static 'src/skills/css.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>CSS</h4>
@@ -83,7 +85,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/javascript.png' %}" alt="">
+                <img src="{% static 'src/skills/javascript.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>JavaScript</h4>
@@ -92,7 +94,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/react.png' %}" alt="">
+                <img src="{% static 'src/skills/react.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>React.js</h4>
@@ -101,14 +103,13 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/figma.png' %}" alt="">
+                <img src="{% static 'src/skills/figma.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Figma</h4>
                 <span class="bar"><span class="figma"></span></span>
               </div>
             </li>
-           
           </ul>
         </div>
         <div class="skills-container_set">
@@ -116,7 +117,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
           <ul>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/python.png' %}" alt="">
+                <img src="{% static 'src/skills/python.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Python</h4>
@@ -125,7 +126,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/django-2.png' %}" alt="">
+                <img src="{% static 'src/skills/django-2.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Django</h4>
@@ -134,7 +135,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/Rest-2.png' %}" alt="">
+                <img src="{% static 'src/skills/Rest-2.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Django REST Framework</h4>
@@ -143,7 +144,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/mysql.png' %}" alt="">
+                <img src="{% static 'src/skills/mysql.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>MySQL</h4>
@@ -152,7 +153,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/postgre.png' %}" alt="">
+                <img src="{% static 'src/skills/postgre.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>PostgreSQL</h4>
@@ -161,7 +162,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
             </li>
             <li>
               <div class="skill-image">
-                <img src="{% static 'src/skills/redis.png' %}" alt="">
+                <img src="{% static 'src/skills/redis.png' %}" alt="" />
               </div>
               <div class="skill-bar">
                 <h4>Redis</h4>
@@ -176,29 +177,28 @@ Home, Surafel Melaku {% endblock %} {% block content %}
 
   <div class="home-works_container">
     <div class="home-works_wrapper">
-      <h1 class="web-title">Featured Works</h1>
+      <h1 class="web-home-title">Featured Works</h1>
 
       <div class="works-container">
         {% for work in works %}
         <div class="work-container">
           <div class="work-container_picture">
-            <img
-              src="{{ work.work_picture.url  }}"
-              alt="eco heaven image"
-            />
+            <img src="{{ work.work_picture.url  }}" alt="eco heaven image" />
           </div>
           <div class="work-container_description">
             <p class="work-title">{{ work.work_title }}</p>
             <p class="web-date">{{ work.work_year }}</p>
             <div class="work-techcontainer">
-              {% for work_tech in work.work_technology.all  %}
+              {% for work_tech in work.work_technology.all %}
               <p class="work-tech">{{ work_tech.tech }}</p>
               {% endfor %}
             </div>
-            <p class="web-text">
-              {{ work.work_presentaion }}
-            </p>
-            <a href="{% url 'work-detail' work.get_slug work.id  %}" class="web-link">read more</a>
+            <p class="web-text">{{ work.work_presentaion }}</p>
+            <a
+              href="{% url 'work-detail' work.get_slug work.id  %}"
+              class="web-link"
+              >read more</a
+            >
           </div>
         </div>
         {% endfor %}
@@ -208,7 +208,7 @@ Home, Surafel Melaku {% endblock %} {% block content %}
 
   <div class="home-blog_container">
     <div class="home-blog_wrapper">
-      <h1 class="web-title">Recent Blogs</h1>
+      <h1 class="web-home-title">Recent Blogs</h1>
       <div class="blogs-container">
         {% for blog in blogs %} {% if forloop.counter < 3 %}
         <div class="blog-container">
@@ -249,4 +249,3 @@ Home, Surafel Melaku {% endblock %} {% block content %}
   </div>
 </div>
 {% endblock %}
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis explicabo veniam provident non laudantium velit exercitationem nemo et ipsa error incidunt temporibus earum odio fuga, recusandae quia eligendi suscipit quo.
