@@ -10,6 +10,18 @@
     background: rgb(170,172,255);
     background: linear-gradient(120deg, rgba(170,172,255,1) 13%, rgba(32,140,254,1) 36%, rgba(48,160,255,1) 66%, rgba(73,94,249,1) 84%);
     height: auto;
+    animation: heroColor 12s ease-in-out infinite;
+}
+@keyframes heroColor {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    0% {
+        background-position: 0 50%;
+    }
 }
 .home-hero_wrapper {
     max-width: 1400px;
